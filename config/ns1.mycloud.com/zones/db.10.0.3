@@ -1,0 +1,26 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.mycloud.com. admin.mycloud.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+; name servers - NS records
+
+	IN	NS	ns1.mycloud.com.
+	IN	NS	ns2.mycloud.com.
+
+; PTR records
+
+235	IN	PTR	ns1.mycloud.com.
+180	IN	PTR	ns2.mycloud.com.
+226	IN	PTR	db.mycloud.com.	
+15	IN 	PTR	files.mycloud.com.
+162	IN	PTR	mail.mycloud.com.
+183	IN	PTR	log.mycloud.com.
+114 	IN	PTR	www.mycloud.com.
+

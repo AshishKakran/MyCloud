@@ -1,0 +1,20 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+	
+zone "mycloud.com" {
+	type master;
+	file "/etc/bind/zones/db.mycloud.com";	#zone file path
+	allow-transfer { 10.0.3.180; };		#ns2.mycloud.com
+};
+
+zone "3.0.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/zones/db.10.0.3";	#10.0.3.0/24 subnet
+	allow-transfer { 10.0.3.180; };		#ns2 private ip add -secondary
+};
+
